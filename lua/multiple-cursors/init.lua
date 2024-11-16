@@ -148,8 +148,15 @@ default_key_maps = {
   {"i", "<C-Left>", insert_mode_motion.word_left},
   {"i", "<C-Right>", insert_mode_motion.word_right},
 
+  {"i", "<C-k>", insert_mode_motion.up},
+  {"i", "<C-j>", insert_mode_motion.down},
+  {"i", "<C-h>", insert_mode_motion.left},
+  {"i", "<C-l>", insert_mode_motion.right},
+  {"i", "<A-h>", insert_mode_motion.word_left},
+  {"i", "<A-l>", insert_mode_motion.word_right},
+
   -- Non-printing characters
-  {"i", {"<BS>", "<C-h>"}, insert_mode_nonprinting.bs},
+  {"i", "<BS>", insert_mode_nonprinting.bs},
   {"i", "<Del>", insert_mode_nonprinting.del},
   {"i", {"<CR>", "<kEnter>"}, insert_mode_nonprinting.cr},
   {"i", "<Tab>", insert_mode_nonprinting.tab},
@@ -161,6 +168,7 @@ default_key_maps = {
 
   -- Exit
   {"i", "<Esc>", insert_mode_escape.escape},
+  {"i", "<C-c>", insert_mode_escape.escape},
 
 
   -- Visual mode ---------------------------------------------------------------
@@ -192,7 +200,7 @@ default_key_maps = {
   {"x", "g~", visual_mode_edit.g_tilde},
 
   -- Exit
-  {"x", {"<Esc>", "v"}, visual_mode_escape.escape},
+  {"x", {"<Esc>", "v", "<C-C>"}, visual_mode_escape.escape},
 
 }
 
